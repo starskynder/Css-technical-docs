@@ -1,0 +1,17 @@
+{
+  "name": "css-technical-docs",
+  "version": "1.0.0",
+  "description": "Techinical Documentation Project for freeCodeCamp",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "starskynder",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.1"
+  }
+}
