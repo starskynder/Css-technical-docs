@@ -14,31 +14,35 @@
 </head>
 
 <body>
-  <nav id="navbar">
+  <nav id="navbar" class="main-nav">
     <header class="main-header">
       <div>
         <h1>CSS DOCS</h1>
       </div>
-      <div class="star-wrapper"><span class="star"></span></div>
+      <div class="star-wrapper"><span class="star"> <div class="star-circle">
+            <i class="fas fa-star "></i>
+          </div></span></div>
 
 
     </header>
-    <ul>
-      <li><a href="" class="nav-link"></a></li>
-      <li><a href="" class="nav-link"></a></li>
-      <li><a href="" class="nav-link"></a></li>
-      <li><a href="" class="nav-link"></a></li>
-      <li><a href="" class="nav-link"></a></li>
-    </ul>
+    <ol class="nav-links">
+      <li><a href="#What_is_CSS" class="nav-link">What is CSS</a></li>
+      <li><a href="#How_CSS_Works" class="nav-link">How CSS Works</a></li>
+      <li><a href="#How_to_apply_CSS" class="nav-link">How to apply CSS</a></li>
+      <li><a href="#CSS_declaration" class="nav-link">CSS declaration</a></li>
+      <li><a href="#CSS_Selectors" class="nav-link">CSS Selectors</a></li>
+    </ol>
   </nav>
   <main id="main-doc">
-    <section class="main-section ">
-      <div class="doc-card">
+    <div class="doc-card">
+      <section class="main-section " id="What_is_CSS">
+
         <header>
+
           <div class="doc-card__header">
             <div class="doc-card__num"><span>1</span></div>
             <div class="doc-card__title">
-              <h2>What is CSS?</h2>
+              <h2>What is CSS</h2>
             </div>
           </div>
         </header>
@@ -64,17 +68,18 @@
                 <code class="doc-card_example">
            
 h1 {<br>
-  color: blue;<br>
-  background-color: yellow;<br>
-  border: 1px solid black;
-}<br>
+ &nbsp; &nbsp;color: blue;<br>
+ &nbsp; &nbsp;background-color: yellow;<br>
+ &nbsp; &nbsp;border: 1px solid black;<br>
+ &nbsp;}<br>
+<br>
 p {<br>
-  color: red;<br>
-}<br>
+  &nbsp; &nbsp;color: red;<br>
+  &nbsp;}
 </code> </span>
               The first rule starts with an h1 selector, which means that it will apply its property values to the
-              <code>&lt;h1&gt;</code> element. It contains three properties and their values (each property/value pair is
-              called a declaration):
+              <span class="tags">&lt;h1&gt;</span> element. It contains three properties and their values (each property/value
+              pair is called a declaration):
               <ul>
                 <li>The first one sets the text color to blue.</li>
                 <li> The second sets the background color to yellow.</li>
@@ -82,8 +87,9 @@ p {<br>
                   and colored black.
                 </li>
               </ul>
-              The second rule starts with a <code>p</code> selector, which means that it will apply its property values to
-              the <code> &lt;p&gt; </code>element. It contains one declaration, which sets the text color to red.
+              The second rule starts with a <span class="tags">p</span> selector, which means that it will apply its property
+              values to the <span class="tags"> &lt;p&gt; </span>element. It contains one declaration, which sets the text
+              color to red.
             </p>
           </div>
         </div>
@@ -94,18 +100,111 @@ p {<br>
             </div>
           </div>
         </footer>
-      </div>
-    </section>
-    <section class="main-section">
-      <header>
-        <h2></h2>
-      </header>
-    </section>
-    <section class="main-section">
-      <header>
-        <h2></h2>
-      </header>
-    </section>
+
+      </section>
+    </div>
+    <div class="doc-card">
+      <section class="main-section" id="How_CSS_Works">
+
+        <header>
+          <div class="doc-card__header">
+            <div class="doc-card__num"><span>2</span></div>
+            <div class="doc-card__title">
+              <h2>How CSS Works</h2>
+            </div>
+          </div>
+        </header>
+        <div class="doc-card__content">
+          <div class="doc-card__inner">
+            <p class="doc-card__txt">
+              When a browser displays a document, it must combine the document's content with its style information. It processes the document
+              in two stages:
+              <ul>
+                <li>
+                  The browser converts HTML and CSS into the DOM (Document Object Model). The DOM represents the document in the computer's
+                  memory. It combines the document's content with its style.</li>
+                <li> The browser displays the contents of the DOM.</li>
+              </ul>
+              A DOM has a tree-like structure. Each element, attribute and piece of text in the markup language becomes a DOM node in the
+              tree structure. The nodes are defined by their relationship to other DOM nodes. Some elements are parents of
+              child nodes, and child nodes have siblings. Understanding the DOM helps you design, debug and maintain your
+              CSS because the DOM is where your CSS and the document's content meet up.<br> Rather than a long,
+              boring explanation, let's take an example to see how the DOM and CSS work together. Let's assume the following
+              HTML code:
+              <span class="doc-card__snippet">
+                <code>
+               &lt;p&gt;<br>
+                  Let's use: <br>
+                  &nbsp;&lt;span&gt;Cascading&lt;/span&gt; <br>
+                  &nbsp;&lt;span&gt;Style&lt;/span&gt; <br>
+                  &nbsp;&lt;span&gt;Sheets&lt;/span&gt; <br>
+               &lt;/p&gt;
+              </code>
+              </span>
+              In the DOM, the node corresponding to our <span class="tags">&lt;p&gt;</span> element is a parent. Its children
+              are a text node and the nodes corresponding to our <span class="tags">&lt;span&gt; </span> elements. The SPAN
+              nodes are also parents, with text nodes as their children:
+            </p>
+          </div>
+        </div>
+        <footer>
+          <div class="doc-card__footer">
+            <div class="outer-circle">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </footer>
+
+      </section>
+    </div>
+    <div class="doc-card">
+
+      <section class="main-section" id="How_to_apply_CSS">
+
+        <header>
+          <div class="doc-card__header">
+            <div class="doc-card__num"><span>3</span></div>
+            <div class="doc-card__title">
+              <h2>How to apply CSS</h2>
+            </div>
+          </div>
+        </header>
+        <div class="doc-card__content">
+          <div class="doc-card__inner">
+            <p class="doc-card__txt">
+              There are three different ways to apply CSS to an HTML document that you'll commonly come across, some more useful than others.
+              Here we'll briefly review each one. external stylesheet An external stylesheet is when you have your CSS written
+              in a separate file with a .css extension, and you reference it from an HTML
+              <link> element. The HTML file looks something like this:
+              <span class="doc-card__snippet">
+                <code>
+                      &lt;!DOCTYPE html&gt; <br>
+                      &lt;html&gt;<br>
+                      &lt;head&gt;<br>
+                      &lt;meta charset="utf-8"&gt;<br>
+                      &lt;title&gt;My CSS experiment&lt;/title&gt;<br>
+                      &lt;link rel="stylesheet" href="style.css"&gt;<br>
+                      &lt;/head&gt;<br>
+                      &lt;body&gt;<br>
+                          &lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+                          &lt;p&gt;This is my first CSS example&lt;/p&gt;<br>
+                        &lt;/body&gt;<br>
+                      &lt;/html&gt;
+                  </code>
+              </span>
+            </p>
+          </div>
+        </div>
+        <footer>
+          <div class="doc-card__footer">
+            <div class="outer-circle">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </footer>
+
+      </section>
+    </div>
     <section class="main-section">
       <header>
         <h2></h2>
@@ -117,6 +216,13 @@ p {<br>
       </header>
     </section>
   </main>
+  <footer>
+    <div class="main-footer">
+      <p>CSS Docs Template by <a href="https://github.com/starskynder" target="_blank">starskynder</a>. All the documentation
+        in this page is taken from
+        <a href="https://developer.mozilla.org/it/" target="_blank">MDN</a></p>
+    </div>
+  </footer>
 </body>
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 

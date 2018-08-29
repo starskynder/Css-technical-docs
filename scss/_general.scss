@@ -10,6 +10,10 @@ body {
   padding: 0;
   background-color: $primary-color;
   font-family: "Barlow", sans-serif;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 h2 {

@@ -4,6 +4,8 @@
 
   max-width: 500px;
   padding: 0.5em;
+  margin: 6em 0;
+  flex: 1 0 250px;
 }
 
 .doc-card__content {
@@ -18,8 +20,9 @@
 }
 
 .doc-card__header {
-  @include flex-row;
-
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
   background-color: $robins-egg-blue;
   font-family: "Teko", sans-serif;
   font-size: 2em;
@@ -27,20 +30,20 @@
 }
 
 .doc-card__title {
+  width: 70%;
   text-align: center;
-  width: 75%;
 }
 
 .doc-card__num {
   background-color: $bondie-blue;
-  width: 25%;
+  width: 30%;
 
   @include flex-col;
 
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 2em;
+  // line-height: 2em;
 
   span {
     border-radius: 50%;
@@ -91,4 +94,12 @@ code {
   border-radius: 50%;
   border: 8px solid $primary-color;
   transform: translateY(-50%);
+}
+
+.tags {
+  background-color: $blizzard-blue;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
 }
