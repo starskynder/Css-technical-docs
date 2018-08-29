@@ -144,6 +144,18 @@ p {<br>
               In the DOM, the node corresponding to our <span class="tags">&lt;p&gt;</span> element is a parent. Its children
               are a text node and the nodes corresponding to our <span class="tags">&lt;span&gt; </span> elements. The SPAN
               nodes are also parents, with text nodes as their children:
+              <span class="doc-card__snippet">
+                <code>
+                  P<br>
+├─ "Let's use:"<br>
+├─ SPAN<br>
+| &nbsp; └─ "Cascading"<br>
+├─ SPAN<br>
+| &nbsp; └─ "Style"<br>
+└─ SPAN<br>
+  &nbsp; &nbsp;└─ "Sheets"
+                </code>
+              </span>
             </p>
           </div>
         </div>
@@ -173,25 +185,94 @@ p {<br>
           <div class="doc-card__inner">
             <p class="doc-card__txt">
               There are three different ways to apply CSS to an HTML document that you'll commonly come across, some more useful than others.
-              Here we'll briefly review each one. external stylesheet An external stylesheet is when you have your CSS written
-              in a separate file with a .css extension, and you reference it from an HTML
-              <link> element. The HTML file looks something like this:
+              Here we'll briefly review each one.
+              <h4>External stylesheet</h4> An external stylesheet is when you have your CSS written in a separate file with
+              a <b>.css</b> extension, and you reference it from an HTML
+              <span class="tags">&lt;link&gt;</span> element. The HTML file looks something like this:
               <span class="doc-card__snippet">
                 <code>
                       &lt;!DOCTYPE html&gt; <br>
-                      &lt;html&gt;<br>
-                      &lt;head&gt;<br>
-                      &lt;meta charset="utf-8"&gt;<br>
-                      &lt;title&gt;My CSS experiment&lt;/title&gt;<br>
-                      &lt;link rel="stylesheet" href="style.css"&gt;<br>
-                      &lt;/head&gt;<br>
+                      &nbsp;&lt;html&gt;<br>
+                      &nbsp;&nbsp; &lt;head&gt;<br>
+                      &nbsp;&nbsp; &lt;meta charset="utf-8"&gt;<br>
+                      &nbsp; &nbsp; &lt;title&gt;My CSS experiment&lt;/title&gt;<br>
+                      &nbsp; &nbsp;&lt;link rel="stylesheet" href="style.css"&gt;<br>
+                      &nbsp;&lt;/head&gt;<br>
                       &lt;body&gt;<br>
-                          &lt;h1&gt;Hello World!&lt;/h1&gt;<br>
-                          &lt;p&gt;This is my first CSS example&lt;/p&gt;<br>
+                      &nbsp; &lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+                      &nbsp; &lt;p&gt;This is my first CSS example&lt;/p&gt;<br>
                         &lt;/body&gt;<br>
                       &lt;/html&gt;
                   </code>
               </span>
+              And the CSS file:
+              <span class="doc-card__snippet">
+                <code>
+                  h1 { <br>
+                    &nbsp;&nbsp; color: blue; <br>
+                   &nbsp; &nbsp;background-color: yellow; <br>
+                   &nbsp; &nbsp;border: 1px solid black; <br>
+                  } <br>
+                  <br>
+                  p {<br>
+                    &nbsp;  &nbsp; color: red;<br>
+                  }
+                </code>
+              </span>
+              This method is arguably the best, as you can use one stylesheet to style multiple documents, and would only need to update
+              the CSS in one place if changes were needed.
+              <h4>Internal Stylesheet</h4>
+              An internal stylesheet is where you don't have an external CSS file, but instead place your CSS inside a <span
+                class="tags">&lt;style&gt;</span> element, contained inside the HTML head. So the HTML would look like this:
+              <span class="doc-card__snippet">
+                <code>
+                    &lt;!DOCTYPE html&gt; <br>
+&lt;html&gt; <br>
+&nbsp;&lt;head&gt; <br>
+&nbsp;&nbsp;&lt;meta charset="utf-8"&gt; <br>
+&nbsp;&nbsp;&lt;title>My CSS experiment&lt;/title&gt; <br>
+&nbsp;&nbsp;&lt;style&gt; <br>
+&nbsp;&nbsp;h1 { <br>
+&nbsp;&nbsp;&nbsp;color: blue; <br>
+&nbsp;&nbsp;&nbsp;background-color: yellow; <br>
+&nbsp;&nbsp;&nbsp;border: 1px solid black; <br>
+&nbsp;&nbsp;&nbsp;} <br>
+      <br>
+&nbsp;&nbsp;p { <br>
+  &nbsp;&nbsp;&nbsp;color: red; <br>
+  &nbsp;&nbsp;} <br>
+  &nbsp;&lt;/style&gt; <br>
+&lt;/head&gt; <br>
+&lt;body&gt; <br>
+&nbsp;&lt;h1>Hello World!&lt;/h1&gt; <br>
+&nbsp;&lt;p>This is my first CSS example&lt;/p&gt; <br>
+&lt;/body&gt; <br>
+&lt;/html&gt; <br>
+                  </code>
+              </span>
+              This can be useful in some circumstances (maybe you're working with a content management system where you can't modify the
+              CSS files directly), but it isn't quite as efficient as external stylesheets — in a website, the CSS would
+              need to be repeated across every page, and updated in multiple places if changes were required.
+              <h4>Inline Styles</h4>
+              <span class="doc-card__snippet"><code>
+&lt;!DOCTYPE html&gt; <br>
+&lt;html&gt; <br>
+&nbsp;&lt;head&gt; <br>
+&nbsp;&nbsp;&lt;meta charset="utf-8"&gt; <br>
+&nbsp;&nbsp;&lt;title>My CSS experiment&lt;/title&gt; <br>
+&nbsp;&lt;/head&gt; <br>
+&lt;body&gt; <br>
+&nbsp;&lt;h1 style="color: blue;background-color: yellow;border: 1px solid black;"&gt;Hello World!&lt;/h1&gt; <br>
+&nbsp;&lt;p style="color:red;">This is my first CSS example&lt;/p&gt; <br>
+&lt;/body&gt; <br>
+&lt;/html&gt; <br>
+              </code></span>
+              Please don't do this, unless you really have to! It is really bad for maintenance (you might have to update the same information
+              multiple times per document), and it also mixes your presentational CSS information with your HTML structural
+              information, making the CSS harder to read and understand. Keeping your different types of code separated and
+              pure makes for a much easier job for all who work on the code. <br> <br>The only time you might
+              have to resort to using inline styles is when your working environment is really restrictive (perhaps your
+              CMS only allows you to edit the HTML body.)
             </p>
           </div>
         </div>
