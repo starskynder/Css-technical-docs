@@ -1,0 +1,25 @@
+/* --- Footer  --- */
+footer {
+  min-width: 100%;
+}
+.main-footer {
+  align-items: center;
+  text-align: center;
+  background-color: $robins-egg-blue;
+  padding: 1em;
+  border-top: 8px solid $boulder;
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:visited {
+      color: $blizzard-blue;
+    }
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
