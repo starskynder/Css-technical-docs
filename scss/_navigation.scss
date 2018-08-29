@@ -1,0 +1,66 @@
+/* ---- Navigation ------ */
+.main-nav {
+  @include flex-col;
+
+  max-width: 500px;
+  flex: 1 1 250px;
+  padding: 8px;
+}
+
+.main-header {
+  text-align: center;
+  background-color: $robins-egg-blue;
+  border-bottom: 8px solid $boulder;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.nav-links {
+  list-style-type: none;
+  padding: 1em;
+  margin-top: 2em;
+  background-color: $robins-egg-blue;
+
+  li {
+    margin: 1.5em;
+    text-align: center;
+    padding: 0.3em;
+    background-color: $lynch;
+    border: 4px solid $blizzard-blue;
+    max-width: 400px;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  color: $primary-color;
+  font-size: 1.3em;
+  width: 100%;
+  display: block;
+
+  &:focus,
+  &:hover {
+    background-color: $robins-egg-blue;
+  }
+}
+
+.star-circle {
+  @include flex-col;
+
+  align-items: center;
+  justify-content: center;
+  background-color: $lynch;
+  width: 80px;
+  height: 80px;
+  font-size: 2em;
+  line-height: 80px;
+  text-align: center;
+  color: $blizzard-blue;
+  border-radius: 50%;
+  border: 8px solid $primary-color;
+  box-shadow: 0 0 0 8px $boulder;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
