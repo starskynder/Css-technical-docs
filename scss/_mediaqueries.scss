@@ -1,0 +1,23 @@
+/* --- Media Queries --- */
+
+@media screen and (min-width: 750px) {
+  .doc-card:first-of-type {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .doc-card {
+    max-width: 900px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  body {
+    justify-content: flex-start;
+  }
+
+  .main-nav {
+    margin-left: 4em;
+  }
+}
