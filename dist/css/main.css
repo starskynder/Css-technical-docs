@@ -26,6 +26,10 @@ body {
 h2 {
   font-family: "Teko", sans-serif; }
 
+code {
+  font-family: monospace;
+  font-size: 1em; }
+
 /* ---- Navigation ------ */
 .main-nav {
   display: -webkit-box;
@@ -163,13 +167,15 @@ h2 {
   text-align: center; }
   .doc-card__num span {
     border-radius: 50%;
-    display: block;
+    display: inline-block;
     width: 2em;
     height: 2em;
     color: #fff;
     line-height: 2em;
     background-color: #607d8b;
     border: 4px solid #fff; }
+    .doc-card__num span:before {
+      content: "#"; }
 
 .doc-card__snippet,
 code {
