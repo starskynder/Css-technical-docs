@@ -53,10 +53,15 @@
     line-height: 2em;
     background-color: $lynch;
     border: 4px solid $primary-color;
-
+    /* 
     &:before {
       content: "#";
-    }
+    } */
+  }
+}
+@for $i from 1 through 7 {
+  .number-#{$i}::before {
+    content: "#{$i}";
   }
 }
 
